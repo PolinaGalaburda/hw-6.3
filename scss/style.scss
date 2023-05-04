@@ -1,0 +1,259 @@
+@font-face {
+   font-family: "Basis Grotesque Pro";
+   src: url('../fonts/BasisGrotesquePro-Regular.woff2') format('woff2'),
+      url('../fonts/BasisGrotesquePro-Regular.woff') format('woff'),
+      url('../fonts/BasisGrotesquePro-Regular.ttf') format('ttf'),
+      url('../fonts/BasisGrotesquePro-Regular.eot') format('eot');
+}
+
+@font-face {
+   font-family: "Basis Grotesque Pro";
+   src: url("../fonts/BasisGrotesquePro-Light.woff2") format("woff2"),
+      url("../fonts/BasisGrotesquePro-Light.woff") format("woff"),
+      url("../fonts/BasisGrotesquePro-Light.ttf") format("ttf"),
+      url("../fonts/BasisGrotesquePro-Light.eot") format("eot");
+   font-weight: 300;
+}
+
+@font-face {
+   font-family: "Basis Grotesque Pro";
+   src: url("../fonts/BasisGrotesquePro-Bold.woff2") format("woff2"),
+      url("../fonts/BasisGrotesquePro-Bold.woff") format("woff"),
+      url("../fonts/BasisGrotesquePro-Bold.ttf") format("ttf"),
+      url("../fonts/BasisGrotesquePro-Bold.eot") format("eot");
+   font-weight: 700;
+}
+
+body {
+   margin: 0;
+   min-width: 425px;
+   font-family: "Basis Grotesque Pro";
+   font-size: 16px;
+}
+
+@media (max-width: 1068px) {
+   body {
+      font-size: 14px;
+   }
+}
+
+@media (max-width:701) {
+   body {
+      font-size: 16px;
+   }
+}
+
+.header {
+   margin-top: 1.5%;
+   margin-left: 3%;
+   margin-right: 3%;
+   display: flex;
+   justify-content: space-between;
+
+   &__logo {
+      display: flex;
+   }
+
+   &__nav {
+      display: flex;
+   }
+
+   &__menu {
+      display: flex;
+      margin: 0;
+   }
+
+   @media (max-width:990px) {
+      .header__menu {
+         display: none;
+      }
+   }
+
+   &__menu li {
+      list-style: none;
+      padding-left: 20px;
+
+      &:after {
+         content: "";
+         display: inline-block;
+         width: 5px;
+         height: 5px;
+         margin-left: 10px;
+         margin-bottom: 5px;
+         border-top: 1px solid black;
+         border-right: 1px solid black;
+         transform: rotate(135deg);
+      }
+   }
+
+   &__menu a {
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #000000;
+      opacity: 0.85;
+
+      &:hover {
+         color: #0536FC;
+      }
+   }
+}
+
+.logo-p p {
+   margin: 0;
+}
+
+.hamburger-menu {
+   visibility: hidden;
+   width: 22px;
+   margin: 0;
+
+   @media (max-width:990px) {
+      visibility: visible;
+   }
+}
+
+#menu__toggle {
+   opacity: 0;
+}
+
+.menu__btn {
+   display: flex;
+   align-items: center;
+   position: fixed;
+   top: 20px;
+   width: 26px;
+   height: 26px;
+   cursor: pointer;
+   z-index: 1;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #616161;
+}
+
+.menu__btn>span::before {
+   content: '';
+   top: -8px;
+}
+
+.menu__btn>span::after {
+   content: '';
+   top: 8px;
+}
+
+.language {
+   margin-left: 100px;
+}
+
+.partners {
+   display: flex;
+   justify-content: space-between;
+
+   &__content {
+      padding: 8%;
+   }
+
+   &__theme {
+      padding-bottom: 30px;
+      font-family: "Basis Grotesque Pro";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #0536FC;
+      opacity: 0.9;
+   }
+
+   &__title {
+      padding-bottom: 70px;
+      font-family: "Basis Grotesque Pro";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 57px;
+      line-height: 59px;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #000000;
+
+      @media (max-width:990px) {
+         font-size: 35px;
+         line-height: 45px;
+      }
+   }
+
+   &__text {
+      font-family: "Basis Grotesque Pro";
+      font-style: normal;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.03em;
+      color: #000000;
+      opacity: 0.6;
+   }
+}
+
+.arrow-container {
+   display: flex;
+   padding: 8%;
+   padding-right: 3%;
+   align-items: flex-end;
+}
+
+.arrow {
+   animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+   0%,
+   20%,
+   50%,
+   80%,
+   100% {
+      transform: translateY(0);
+   }
+
+   40% {
+      transform: translateY(-20px);
+   }
+
+   60% {
+      transform: translateY(-10px);
+   }
+}
+
+.intro {
+
+   &__tabs {
+      display: flex;
+      align-items: center;
+   }
+
+   &__tab {
+      width: 50%;
+      color: #0536FC;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      line-height: 24px;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #0536FC;
+
+      &:hover {
+         background: #0536FC;
+         color: white;
+         transition: background-color 1s linear;
+      }
+   }
+}
